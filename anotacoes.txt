@@ -1,0 +1,30 @@
+
+web.php:
+nome da funcao diferente da existente no controller
+parametro default não estava opcional
+
+ContractController.php:
+classe CustomerRepository não está importada
+variaveis customer_id e $contract_id invertidas
+
+Customer.php:
+referencia incorreta ContractItem ->Contract
+
+CustomerRepository.php:
+declaração contract_items desnecessária
+comando $query->fields() desnecessário
+
+
+main.blade.php:
+yeld diferente do declarado no arquivo show.blade.php
+
+Contract.php:
+nome da funcao diferente da correspondente em customer.php
+funcao scopeFields com campo contract_id ausente
+ausencia da declaração protected $keyType = 'string' para exibição da primary key personalizada
+
+config/app.php:
+provider ViewServiceProvider não instanciado
+
+ViewServiceProvider.php:
+nome da view incorreto contract.home -> contract.show

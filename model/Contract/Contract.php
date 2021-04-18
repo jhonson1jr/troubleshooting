@@ -5,10 +5,12 @@ use Illuminate\Database\Eloquent\Model;
 class Contract extends Model {
 
     protected $table = 'contract';
-    protected $primaryKey = 'contract_id';
+    public $primaryKey = 'contract_id';
     public $timestamps = false;
-
-    public function customer()
+    
+    protected $keyType = 'string';
+    
+    public function contract()
     {
         return $this->belongsTo('Model\Customer\Customer', 'customer_id', 'customer_id');
     }
@@ -20,6 +22,6 @@ class Contract extends Model {
 
     public function scopeFields($query)
     {
-        return $query->select('customer_id','description');
+        return $query->select('contract_id AS id', 'customer_id','description');
     }
 }
